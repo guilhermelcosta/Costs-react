@@ -19,7 +19,7 @@ function NovoProjeto() {
             },
             body: JSON.stringify(projeto)
         }).then((resposta) => resposta.json).then((data) => {
-            navigate('/projetos', {message: 'Projeto criado com sucesso!'});
+            navigate('/projetos', {state: {mensagem: 'Projeto criado com sucesso!'}});
         }).catch((e) => console.log(e));
     }
 
