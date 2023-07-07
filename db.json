@@ -1,5 +1,17 @@
 {
-  "projetos": [],
+  "projetos": [
+    {
+      "categoria": {
+        "id": "1",
+        "nome": "Infra"
+      },
+      "nome": "projeto teste",
+      "orçamento": "1500",
+      "custo": 0,
+      "servicos": [],
+      "id": 1
+    }
+  ],
   "categorias": [
     {
       "id": 1,

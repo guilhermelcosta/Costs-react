@@ -4,9 +4,10 @@ import Input from '../formulario/Input';
 import Select from '../formulario/Select';
 import BtnSubmit from '../formulario/BtnSubmit';
 
-function ProjetoFormulario({TextoBtn}) {
+function ProjetoFormulario({TextoBtn, handleSubmit, dadosProjeto}) {
 
     const [categorias, setCategorias] = useState([]);
+    const [projeto, setProjeto] = useState(dadosProjeto || {});
 
     /*O useEffect previne o fetch da URL em loop quando o conteudo e requisitado*/
     useEffect(() => {
@@ -20,12 +21,33 @@ function ProjetoFormulario({TextoBtn}) {
         }).catch((e) => console.log(e));
     }, []);
 
+    const submit = (e) => {
+        e.preventDefault();
+        handleSubmit(projeto);
+    };
+
+    function handleChange(e) {
+        setProjeto({...projeto, [e.target.name]: e.target.value});
+    }
+
+    function handleCategoria(e) {
+        setProjeto({
+            ...projeto, categoria: {
+                id: e.target.value,
+                nome: e.target.options[e.target.selectedIndex].text,
+            }
+        });
+    }
+
     return (
-        <form className={styles.formulario}>
-            <Input tipo="text" texto="Nome do projeto" nome="nome" placeholder="Insira o nome do projeto"/>
+        <form onSubmit={submit} className={styles.formulario}>
+            <Input tipo="text" texto="Nome do projeto" nome="nome" handleOnChange={handleChange}
+                   placeholder="Insira o nome do projeto" valor={projeto.nome ? projeto.nome : ''}/>
             <Input tipo="number" texto="Orçamento do projeto" nome="orçamento"
-                   placeholder="Insira o orçamento do projeto"/>
-            <Select name="id_categoria" texto="Selecione a categoria" options={categorias}/>
+                   handleOnChange={handleChange} placeholder="Insira o orçamento do projeto"
+                   valor={projeto.orcamento}/>
+            <Select name="id_categoria" texto="Selecione a categoria" options={categorias}
+                    handleOnChange={handleCategoria} valor={projeto.categoria ? projeto.categoria.id : ''}/>
             <BtnSubmit texto={TextoBtn}/>
         </form>
     );
