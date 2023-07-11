@@ -1,17 +1,17 @@
-import Mensagem from '../layout/Mensagem';
-import {useSearchParams} from 'react-router-dom';
+import styles from './Projeto.module.css';
+import Container from '../layout/Container';
+import LinkButton from '../layout/LinkButton';
 
 function Projetos() {
-
-    const [searchParams] = useSearchParams();
-    let mensagem = '';
-
-    if (searchParams.get('mensagem')) mensagem = searchParams.get('mensagem');
-
     return (
-        <div>
-            <h1>Meus projetos</h1>
-            <Mensagem tipo="sucesso" mensagem={mensagem}/>
+        <div className={styles.container}>
+            <div className={styles.titulo_container}>
+                <h1>Meus projetos</h1>
+                <LinkButton to={'/novoprojeto'} text="Criar projeto"/>
+            </div>
+            <Container customClass="start">
+                <p>Projetos</p>
+            </Container>
         </div>
     );
 }
