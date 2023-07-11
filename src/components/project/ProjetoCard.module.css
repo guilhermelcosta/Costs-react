@@ -1,0 +1,84 @@
+.projetoCard {
+    padding: 1em;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    width: 24%;
+    margin: 0.5%;
+}
+
+.projetoCard h4 {
+    background-color: #222;
+    color: #ffbb33;
+    padding: 0.4em;
+    margin-bottom: 1.3em;
+    font-size: 1.3em;
+}
+
+.projetoCard p {
+    color: #7a7a7a;
+    margin-bottom: 1em;
+}
+
+.projetoCard p spam {
+    font-weight: bold;
+}
+
+.textoCategoria {
+    display: flex;
+    align-items: center;
+}
+
+.textoCategoria span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 5px;
+}
+
+.textoCategoria .infra {
+    background-color: #ffaebc;
+}
+
+.textoCategoria .desenvolvimento {
+    background-color: #a0e7e5;
+}
+
+.textoCategoria .design {
+    background-color: #b4f8c8;
+}
+
+.textoCategoria .planejamento {
+    background-color: #fbe7c6;
+}
+
+.projetoCardAcoes {
+    margin-top: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+.projetoCardAcoes a, .projetoCardAcoes button {
+    text-decoration: none;
+    background-color: #fff;
+    color: #222;
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    border: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.projetoCardAcoes svg {
+    margin-right: 0.5em;
+}
+
+.projetoCardAcoes a:hover, .projetoCardAcoes button:hover {
+    background-color: #222;
+    color: #ffbb33;
+}

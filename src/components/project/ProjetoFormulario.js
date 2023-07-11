@@ -43,7 +43,7 @@ function ProjetoFormulario({TextoBtn, handleSubmit, dadosProjeto}) {
         <form onSubmit={submit} className={styles.formulario}>
             <Input tipo="text" texto="Nome do projeto" nome="nome" handleOnChange={handleChange}
                    placeholder="Insira o nome do projeto" valor={projeto.nome ? projeto.nome : ''}/>
-            <Input tipo="number" texto="Orçamento do projeto" nome="orçamento"
+            <Input tipo="number" texto="Orçamento do projeto" nome="orcamento"
                    handleOnChange={handleChange} placeholder="Insira o orçamento do projeto"
                    valor={projeto.orcamento}/>
             <Select name="id_categoria" texto="Selecione a categoria" options={categorias}
