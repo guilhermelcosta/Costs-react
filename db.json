@@ -2,7 +2,7 @@
   "projetos": [
     {
       "nome": "Projeto low",
-      "orçamento": "6070",
+      "orcamento": "6070",
       "categoria": {
         "id": "2",
         "nome": "Desenvolvimento"
@@ -13,7 +13,7 @@
     },
     {
       "nome": "Projeto Gui",
-      "orçamento": "1400",
+      "orcamento": "1400",
       "categoria": {
         "id": "4",
         "nome": "Planejamento"
@@ -24,7 +24,7 @@
     },
     {
       "nome": "Teste 03",
-      "orçamento": "544",
+      "orcamento": "544",
       "categoria": {
         "id": "3",
         "nome": "Design"
@@ -35,7 +35,7 @@
     },
     {
       "nome": "Projeto 04",
-      "orçamento": "1000",
+      "orcamento": "1000",
       "categoria": {
         "id": "4",
         "nome": "Planejamento"
@@ -46,7 +46,7 @@
     },
     {
       "nome": "Projeto 05",
-      "orçamento": "4893",
+      "orcamento": "4893",
       "categoria": {
         "id": "2",
         "nome": "Desenvolvimento"
@@ -57,7 +57,7 @@
     },
     {
       "nome": "Teste 03",
-      "orçamento": "444",
+      "orcamento": "444",
       "categoria": {
         "id": "1",
         "nome": "Infra"
@@ -65,6 +65,17 @@
       "custo": 0,
       "servicos": [],
       "id": 7
+    },
+    {
+      "nome": "Projeto novo",
+      "orcamento": "5000",
+      "categoria": {
+        "id": "2",
+        "nome": "Desenvolvimento"
+      },
+      "custo": 0,
+      "servicos": [],
+      "id": 8
     }
   ],
   "categorias": [
