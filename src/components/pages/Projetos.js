@@ -3,21 +3,26 @@ import Container from '../layout/Container';
 import LinkButton from '../layout/LinkButton';
 import ProjetoCard from '../project/ProjetoCard';
 import {useState, useEffect} from 'react';
+import Loading from '../layout/Loading';
 
 function Projetos() {
 
     const [projetos, setProjetos] = useState([]);
+    const [removerLoading, setRemoverLoading] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/projetos', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        }).then(resp => resp.json()).then(data => {
-            console.log(data);
-            setProjetos(data);
-        }).catch(e => console.log(e));
+        // Adicionei esse setTimeout apenas para conseguir visualizar o icone de loading
+        setTimeout(() => {
+            fetch('http://localhost:5000/projetos', {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            }).then(resp => resp.json()).then(data => {
+                setProjetos(data);
+                setRemoverLoading(true);
+            }).catch(e => console.log(e));
+        }, 1000);
     }, []);
 
 
@@ -32,6 +37,10 @@ function Projetos() {
                     <ProjetoCard id={projeto.id} nome={projeto.nome} orcamento={projeto.orcamento}
                                  categoria={projeto.categoria.nome} key={projeto.id}/>
                 ))}
+                {!removerLoading && <Loading/>}
+                {removerLoading && projetos.length === 0 && (
+                    <p>Não há projetos cadastrados!</p>
+                )}
             </Container>
         </div>
     );
