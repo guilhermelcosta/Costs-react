@@ -16,7 +16,7 @@
       "orcamento": "4893",
       "categoria": {
         "id": "2",
-        "nome": "Desenvolvimento"
+        "nome": "Design"
       },
       "custo": 0,
       "servicos": [],
@@ -38,7 +38,7 @@
       "orcamento": "5000",
       "categoria": {
         "id": "2",
-        "nome": "Desenvolvimento"
+        "nome": "Planejamento"
       },
       "custo": 0,
       "servicos": [],

@@ -1,4 +1,4 @@
-import styles from './Projeto.module.css';
+import styles from './Projetos.module.css';
 import Container from '../layout/Container';
 import LinkButton from '../layout/LinkButton';
 import ProjetoCard from '../project/ProjetoCard';
@@ -36,18 +36,18 @@ function Projetos() {
 
 
     return (<div className={styles.container}>
-            <div className={styles.titulo_container}>
-                <h1>Meus projetos</h1>
-                <LinkButton to={'/novoprojeto'} text="Criar projeto"/>
-            </div>
-            <Container customClass="start">
-                {projetos.length > 0 && projetos.map((projeto) => (
-                    <ProjetoCard id={projeto.id} nome={projeto.nome} orcamento={projeto.orcamento}
-                                 categoria={projeto.categoria.nome} key={projeto.id} handleRemove={removerProjeto}/>))}
-                {!removerLoading && <Loading/>}
-                {removerLoading && projetos.length === 0 && (<p>Não há projetos cadastrados!</p>)}
-            </Container>
-        </div>);
+        <div className={styles.titulo_container}>
+            <h1>Meus projetos</h1>
+            <LinkButton to={'/novoprojeto'} text="Criar projeto"/>
+        </div>
+        <Container customClass="start">
+            {projetos.length > 0 && projetos.map((projeto) => (
+                <ProjetoCard id={projeto.id} nome={projeto.nome} orcamento={projeto.orcamento}
+                             categoria={projeto.categoria.nome} key={projeto.id} handleRemove={removerProjeto}/>))}
+            {!removerLoading && <Loading/>}
+            {removerLoading && projetos.length === 0 && (<p>Não há projetos cadastrados!</p>)}
+        </Container>
+    </div>);
 }
 
 export default Projetos;

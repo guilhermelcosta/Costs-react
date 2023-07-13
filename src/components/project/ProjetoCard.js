@@ -16,7 +16,7 @@ export default function ProjetoCard({id, nome, orcamento, categoria, handleRemov
             <p className={styles.textoCategoria}><span
                 className={`${styles[categoria.toLowerCase()]}`}></span>{categoria}</p>
             <div className={styles.projetoCardAcoes}>
-                <Link to={'/'}><BsPencil/>Editar</Link>
+                <Link to={`/projeto/${id}`}><BsPencil/>Editar</Link>
                 <button onClick={remover}><BsFillTrashFill/>Excluir</button>
             </div>
         </div>
