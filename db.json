@@ -12,17 +12,6 @@
       "id": 2
     },
     {
-      "nome": "Projeto 05",
-      "orcamento": "4893",
-      "categoria": {
-        "id": "2",
-        "nome": "Design"
-      },
-      "custo": 0,
-      "servicos": [],
-      "id": 6
-    },
-    {
       "nome": "Teste 03",
       "orcamento": "444",
       "categoria": {
@@ -35,10 +24,10 @@
     },
     {
       "nome": "Projeto novo",
-      "orcamento": "5000",
+      "orcamento": "5500",
       "categoria": {
-        "id": "2",
-        "nome": "Planejamento"
+        "id": "1",
+        "nome": "Infra"
       },
       "custo": 0,
       "servicos": [],

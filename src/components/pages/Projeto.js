@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Loading from '../layout/Loading';
 import Container from '../layout/Container';
+import ProjetoFormulario from '../project/ProjetoFormulario';
 
 export default function Projeto() {
 
@@ -22,6 +23,22 @@ export default function Projeto() {
             }).catch(e => console.log(e));
         }, 1000);
     }, [id]);
+
+    function editarPostagem(projeto) {
+        if (projeto.orcamento < projeto.custo) {
+            //     mensagem
+        }
+        fetch(`http://localhost:5000/projetos/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(projeto),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }).then((resp) => resp.json()).then((data) => {
+            setProjeto(data);
+            setshowProjectForm(false);
+        }).catch(e => console.log(e));
+    }
 
     function toggleProjectForm() {
         setshowProjectForm(!showProjectForm);
@@ -44,7 +61,8 @@ export default function Projeto() {
                                 </div>
                             ) : (
                                 <div className={styles.info_projeto}>
-                                    <p>Detalhes do projeto</p>
+                                    <ProjetoFormulario handleSubmit={editarPostagem} TextoBtn="Concluir edição"
+                                                       dadosProjeto={projeto}/>
                                 </div>
                             )}
                         </div>
